@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cad_estilo.css">
+    <title>Formulário de Cadastro</title>
+</head>
+
+<body>
+    <header>
+        <h1>Cadastro de Usuário</h1>
+    </header>
+
+    <main>
+        <form class="formulario" action="../scripts/cad.php" method="POST">
+            <div class="campo">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="campo">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="campo">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+
+            <div class="campo">
+                <label>Sexo:</label>
+                <div>
+                    <input type="radio" id="masculino" name="sexo" value="m" required>
+                    <label for="masculino">Masculino</label>
+                </div>
+                <div>
+                    <input type="radio" id="feminino" name="sexo" value="f" required>
+                    <label for="feminino">Feminino</label>
+                </div>
+            </div>
+
+
+            <div class="campo">
+                <label for="data-nascimento">Data de Nascimento:</label>
+                <input type="date" id="data-nascimento" name="data-nascimento" required>
+            </div>
+
+            <div class="botoes">
+                <input type="submit" class="btn-form" value="Cadastrar">
+                <input type="reset" class="btn-form" value="Limpar">
+                <input type="button" class="btn-form" value="Voltar" onclick="location.href='../index.html'">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ProjetoCrudBruno. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+
+    </script>
+</body>
+
+</html>
