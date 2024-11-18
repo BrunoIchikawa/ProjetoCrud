@@ -3,5 +3,6 @@
     $usuario="root";
     $senha="12345678";
     $banco="dbteste";
-    $cmd=new PDO( "mysql:host=$servidor;dbname=$banco",username: $usuario,password: $senha);
+    $conexao = new PDO("mysql:host=$servidor;dbname=$banco", $usuario, $senha);
+    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>

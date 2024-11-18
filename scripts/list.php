@@ -7,7 +7,6 @@ try {
     $sql = "SELECT * FROM tbusuario";
     $stmt = $conexao->query($sql);
     $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 } catch (PDOException $e) {
     echo "Erro na conexão: " . $e->getMessage();
 }
@@ -29,6 +28,7 @@ try {
         h1 {
             text-align: center;
             color: #333;
+            color: #fff;
         }
 
         table {
@@ -58,18 +58,35 @@ try {
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
-        #btnVoltar {
-            position: absolute;
+
+        .button-holders {
+            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #btnVoltar, #btnExcluir {
+
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
             background-color: #4CAF50;
             color: #fff;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-}
+
+        }
+
+        #excluir-content {
+            margin-left: 10px;
+        }
+
+
+
+
     </style>
 </head>
 
@@ -119,7 +136,12 @@ try {
             </tbody>
         </table>
     </main>
-    <input type="button" value="Voltar" onclick="history.back()" id="btnVoltar">
+
+    <div class="button-holders">
+        <input type="button" value="Voltar" onclick="location.href = '../index.html'" id="btnVoltar">
+        <input type="button" value="Deseja excluir um registro?" onclick="location.href = '../paginas/excluir.html'" id="btnExcluir">
+        
+    </div>
     <footer>
         <p>&copy; 2024 Projeto CRUD. Todos os direitos reservados.</p>
     </footer>
