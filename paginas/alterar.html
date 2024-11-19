@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alterar Registros</title>
+    <link rel="stylesheet" href="../css/cad_estilo.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Cadastro de Usuário</h1>
+    </header>
+
+    <main>
+      <form class="formulario" action="../scripts/alterar.php" method="POST">
+        <div class="campo">
+          <label for="codigo">Código:</label>
+          <input type="text" id="codigo" name="codigo" required />
+        </div>
+        <div class="campo">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" disabled />
+        </div>
+        <div class="campo">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" disabled />
+        </div>
+        <div class="campo">
+          <label for="senha">Senha:</label>
+          <input type="password" id="senha" name="senha" disabled />
+        </div>
+        <div class="campo">
+          <label>Sexo:</label>
+          <div>
+            <input type="radio" id="masculino" name="sexo" value="m" disabled />
+            <label for="masculino">Masculino</label>
+          </div>
+          <div>
+            <input type="radio" id="feminino" name="sexo" value="f" disabled />
+            <label for="feminino">Feminino</label>
+          </div>
+        </div>
+        <div class="campo">
+          <label for="data-nascimento">Data de Nascimento:</label>
+          <input
+            type="date"
+            id="data-nascimento"
+            name="data-nascimento"
+            disabled
+          />
+        </div>
+        <div class="botoes">
+            <input type="submit" class="btn-form" value="Buscar" id="searchButton">
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 ProjetoCrudBruno. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function() {
+            var searchForm = document.getElementById('searchForm');
+            var searchButton = document.getElementById('searchButton');
+    
+            if (searchButton.value === 'Buscar') {
+                searchButton.value = 'Alterar';
+                searchForm.action = '../scripts/alterar.php';
+                // Disable the input fields for codigo and enable the others
+                document.getElementById('codigo').disabled = true;
+                document.getElementById('nome').disabled = false;
+                document.getElementById('email').disabled = false;
+                document.getElementById('senha').disabled = false;
+                document.querySelector('input[name="sexo"]').disabled = false;
+                document.getElementById('data-nascimento').disabled = false;
+            } else {
+                searchButton.value = 'Buscar';
+                searchForm.action = '../scripts/pesquisa.php';
+                // Revert back to the initial state
+                document.getElementById('codigo').disabled = false;
+                document.getElementById('nome').disabled = true;
+                document.getElementById('email').disabled = true;
+                document.getElementById('senha').disabled = true;
+                document.querySelector('input[name="sexo"]').disabled = true;
+                document.getElementById('data-nascimento').disabled = true;
+            }
+        });
+    </script>
+
+
+    </script>
+  </body>
+</html>

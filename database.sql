@@ -13,5 +13,3 @@ create table tbusuario(
 
 select * from tbusuario;
 
-
-email_t 
