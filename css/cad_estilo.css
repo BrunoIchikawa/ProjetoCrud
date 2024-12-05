@@ -63,16 +63,44 @@ input[type="radio"] {
 .botoes {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
 }
 
 
 
-form .botoes .btn-form {
+.btn-form {
     margin-right: 5px;
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background: rgb(170, 66, 167); /* color-1 */
+    background: rgb(170, 66, 167); 
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+
+
+.btn-alterar{
+    margin-right: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgb(34, 67, 153);
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+
+.btn-excluir{
+    margin-right: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgb(149, 32, 32); 
     color: white;
     font-weight: 900;
     cursor: pointer;
